@@ -1,0 +1,14 @@
+<div class="mb-2 border-bottom row">
+  <div class="col-9">
+    <h4 style="color: gray">{{j.name}}</h4>
+    <div><b>Location:</b> {{j.location}}</div>
+    {% if j.current_size > 0 %}
+    <div><b>vacancy:</b> {{j.current_size}}</div>
+    {% else %}
+    <div><b>vacancy:</b> {{0}}</div>
+    {% endif %}
+  </div>
+  <div class="col-3 mt-4 text-center">
+    <a href="/shelter_info/{{j.id}}" class="btn btn-primary">Apply</a>
+  </div>
+</div>

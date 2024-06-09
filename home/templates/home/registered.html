@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous"
+    />
+    <style>
+      body {
+        background-image: url("/static/cover.jpg"); /* Add your background image URL here */
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-position: center;
+        color: #fff;
+      }
+      .container {
+        background-color: rgba(
+          0,
+          0,
+          0,
+          0.7
+        ); /* Add a semi-transparent background color */
+        border-radius: 10px;
+        padding: 20px;
+      }
+    </style>
+    <title>Application Submitted</title>
+  </head>
+  <body>
+    <div class="container mt-4">
+      <h1 class="text-center">Place Reserved</h1>
+      <p class="text-center">
+        Thank you for submitting your application. Here is the information you
+        provided:
+      </p>
+      <ul>
+        <li><strong>title:</strong> {{ info.name }}</li>
+        <li><strong>location:</strong> {{ info.location }}</li>
+        <li>
+          <strong>MAPS</strong> <a href="{{info.link}}">{{info.location}}</a>
+        </li>
+        <li><strong>MAX size</strong> {{ info.max_size }}</li>
+        <li><strong>current vacancy:</strong> {{ info.current_size }}</li>
+        <li><strong>Number of Bookings:</strong> {{diff}}</li>
+      </ul>
+      <p class="text-center">
+        If you need to make any changes or have further questions, please don't
+        hesitate to
+        <a
+          href="mailto:murthykoushik18@gmail.com?subject=Found%20a%20problem%20on%20your%20site&body=Name%20%3A%20%3Cyour%20name%3E%0D%0Aemail%20%3A%20%3Cyour%20email%3E%0D%0AProblem%3A%20%3CNoticed%20problem%3E"
+          class="btn btn-primary"
+          >Contact Us</a
+        >
+      </p>
+    </div>
+  </body>
+</html>

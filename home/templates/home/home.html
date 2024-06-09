@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Shelter Availability Checker</title>
+    <link
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <style>
+      .scroll {
+        background-color: hsl(180, 21%, 95%);
+        width: 100%;
+        height: 400px;
+        float: left;
+        margin-left: 1%;
+        padding: 1%;
+        overflow: scroll;
+      }
+    </style>
+  </head>
+  <body style="background-color: #f8f9fa">
+    <!-- Navigation Bar -->
+    {% include "home/navbar.html" %}
+
+    <!-- Home Page Content -->
+    <div class="container mt-4">
+      <div class="jumbotron text-center bg-info text-white">
+        <h1 class="display-4">Shelter Availability Checker</h1>
+        <p class="lead">
+          "Welcome to our website, dedicated to providing vital assistance to
+          communities living in disaster-prone areas. Our mission is to ensure
+          that every individual has access to information about available
+          shelters during times of crisis. Whether you're facing the threat of a
+          natural disaster or seeking refuge from unforeseen emergencies, our
+          platform equips you with real-time updates on nearby shelters,
+          ensuring you and your loved ones can find safety and support when it's
+          needed most. Join us in our commitment to building resilience and
+          empowering communities in the face of adversity."
+        </p>
+      </div>
+
+      <!-- available shelters-->
+
+      <div class="scroll mt-4 ml-4 mr-4">
+        <h2 class="fw-bold text-center mt-4">Available shelters</h2>
+        <div>
+          {% for j in shell %} {% include "home/shelters.html" %} {% endfor %}
+        </div>
+      </div>
+      <br />
+      <hr />
+      <div class="text-center mt-4 mb-2">
+        <!-- Added "mt-4" for margin top -->
+        <a
+          href="mailto:murthykoushik18@gmail.com?subject=Found%20a%20problem%20on%20your%20site&body=Name%20%3A%20%3Cyour%20name%3E%0D%0Aemail%20%3A%20%3Cyour%20email%3E%0D%0AProblem%3A%20%3CNoticed%20problem%3E"
+          type="button"
+          class="btn btn-primary btn-sm"
+          >Contact Us</a
+        >
+      </div>
+    </div>
+    <footer
+      class="bg-primary text-white text-center py-3"
+      style="background-color: #888888 !important"
+    >
+      <p>&copy; 2023 Quick Empo. All rights reserved.</p>
+    </footer>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="scripts.js"></script>
+  </body>
+</html>

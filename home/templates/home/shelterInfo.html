@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Shelter Info</title>
+    <link
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    {% include "home/navbar.html" %}
+    <div class="container mt-5">
+      <div class="row">
+        <div class="col-md-6">
+          <h3 class="mb-3">Shelter Name</h3>
+          <p>{{ s.name }}</p>
+
+          <h3 class="mb-3">Shelter Location</h3>
+          <p>{{ s.location }}</p>
+
+          <h3 class="mb-3">Shelter Maps Link</h3>
+          <p>
+            <a href="{{ s.link }}" class="btn btn-info" target="_blank"
+              >Click for Direction</a
+            >
+          </p>
+
+          <h3 class="mb-3">Maximum Capacity</h3>
+          <p>{{ s.max_size }}</p>
+
+          <h3 class="mb-3">Current Capacity</h3>
+          <p>{{ s.current_size }}</p>
+        </div>
+        <div class="col-md-6">
+          <img
+            src="/media/{{ s.image }}"
+            alt="{{ s.name }}"
+            class="img-fluid rounded shadow-sm"
+            style="height: 300px; width: 100%; object-fit: cover"
+          />
+        </div>
+      </div>
+      <div class="text-center mt-4">
+        <a href="/register/{{ s.id }}" class="btn btn-primary"
+          >Click to Register</a
+        >
+      </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  </body>
+</html>
